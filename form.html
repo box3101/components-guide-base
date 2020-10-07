@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+  <link rel="stylesheet" type="text/css" href="css/guide.css">
+
+  <title>GUIDE</title>
+</head>
+
+<body>
+
+  <div class="guide__nav">
+    <h1><a href="index.html">guide</a></h1>
+    <ul class="nav">
+      <li><a href="color.html">color</a></li>
+      <li><a href="text.html">text</a></li>
+      <li><a href="button.html">button</a></li>
+      <li class="on"><a href="form.html">form</a></li>
+      <!--<li><a href="table.html">table</a></li>-->
+    </ul>
+  </div>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var url = window.location.pathname;
+      url = url.split("/");
+      url = url[url.length - 1];
+      url = url.split("-");
+      if (url.length === 0) {
+        $(".nav li a").each(function () {
+          if (url == $(this).attr("href")) {
+            $(this).parent("li").siblings().removeClass("on");
+            $(this).parent("li").addClass("on");
+          }
+        });
+      } else {
+        url = url[0];
+        $(".nav li a").each(function () {
+          if (url == $(this).attr("href")) {
+            $(this).parent("li").siblings().removeClass("on");
+            $(this).parent("li").addClass("on");
+          }
+        });
+      }
+    });
+  </script>
+  <div class="guide__content">
+    <h2 class="guide__title">FORM</h2>
+    <h2 class="guide__title2">기본 input, select</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <input type="text" name="" id="" placeholder="입력하세요.">
+        <input type="password" name="" id="" placeholder="입력하세요.">
+        <input type="email" name="" id="" placeholder="입력하세요.">
+        <input type="tel" name="" id="" placeholder="입력하세요.">
+        <input type="number" name="" id="" placeholder="입력하세요.">
+        <select>
+          <option value="">선택하세요.</option>
+        </select>
+
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+    <h2 class="guide__title2">데이터피커(싱글)</h2>
+    <div class="guide-detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="input__btns">
+        <p class="date__input"><input type="text" name="" id="dp1601367596833" class="datepicker hasDatepicker"
+            style="width:130px;"><img class="ui-datepicker-trigger" src="images/btn_datepicker.png" alt="..."
+            title="..."></p> <span class="ml15">기본텍스트</span>
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+    <br />
+
+    <h2 class="guide__title2">데이터피커(시작 ~ 끝)</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="date__input--wrap">
+          <div class="date__cell">
+            <p class="date__input"><input type="text" name="" id="dp1601368406174" class="datepicker hasDatepicker"
+                style="width:130px;"><img class="ui-datepicker-trigger" src="images/btn_datepicker.png" alt="..."
+                title="..."></p>
+          </div>
+          <div class="date__cell">
+            <p class="date__input"><input type="text" name="" id="dp1601368406175" class="datepicker hasDatepicker"
+                style="width:130px;"><img class="ui-datepicker-trigger" src="images/btn_datepicker.png" alt="..."
+                title="..."></p>
+          </div>
+          <div class="btn__wrap">
+            <button href="#" class="btn--tpye-search">검색</button>
+          </div>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">입력박스 + 버튼</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="input-btns">
+          <input type="text" name="" id="" style="width:250px">
+          <div class="btn__wrap">
+            <button href="#" class="btn01 btn01--type-03">비밀번호변경</button>
+          </div>
+          <span class="ml15">기본텍스트</span>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">입력박스 + 정보</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <input type="text" name="" id="" style="width:250px">
+        <span class="input--flex-info">옆에 붙는 정보입니다.</span>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">6. 입력박스 + 줄바꿈정보</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <input type="text" name="" id="" style="width:250px">
+        <span class="input--block-info">하단에 붙는 정보입니다.</span>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">7. 입력박스 + 입력박스</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="row--input-wrap">
+          <div>
+            <select style="width:130px">
+              <option value="">전체</option>
+            </select>
+          </div>
+          <div>
+            <input type="text" name="" id="" style="width:250px">
+          </div>
+          <div>
+            <select style="width:130px">
+              <option value="">선택</option>
+            </select>
+          </div>
+          <div>
+            <input type="text" name="" id="" style="width:250px">
+          </div>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">8. 가로로 여러개 나열</h2>
+
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="row--input-wrap">
+          <div>
+            <div class="date__input--wrap">
+              <div class="date__cell">
+                <p class="date__input"><input type="text" name="" id="dp1601368406174" class="datepicker hasDatepicker"
+                    style="width:130px;"><img class="ui-datepicker-trigger" src="images/btn_datepicker.png" alt="..."
+                    title="..."></p>
+              </div>
+              <div class="date__cell">
+                <p class="date__input"><input type="text" name="" id="dp1601368406175" class="datepicker hasDatepicker"
+                    style="width:130px;"><img class="ui-datepicker-trigger" src="images/btn_datepicker.png" alt="..."
+                    title="..."></p>
+              </div>
+              <div class="btn__wrap">
+                <button href="#" class="btn--tpye-search">검색</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input type="text" name="" id="" style="width:250px">
+          </div>
+          <div>
+            기본 텍스트
+          </div>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">9. 전화번호 입력</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="phone__wrap">
+          <div class="first">
+            <select title="휴대폰 첫번재 4자리 선택">
+              <option value="">010</option>
+            </select>
+          </div>
+          <div class="second"><input type="text" name="" maxlength="4" title="휴대폰 두번째 4자리 입력"></div>
+          <div class="three"><input type="text" name="" maxlength="4" title="휴대폰 세번째 4자리 입력"></div>
+
+          <div class="input__btns ml20 btn__wrap">
+            <input type="text" name="" id="" style="width:100px">
+            <a href="#" class="btn01 btn01--type-02">인증요청</a>
+          </div>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">10. 주소 입력</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="address-wrap">
+          <p class="zip-code"><input type="text" name="" id="" maxlength="6" title="우편번호 입력" readonly=""><a href="#"
+              class="btn01 btn01--type-03">우편번호 검색</a></p>
+          <p class="cell"><input type="text" name="" id="" style="width:100%" title="주소 입력"></p>
+          <p class="cell"><input type="text" name="" id="" style="width:100%" title="상세 주소 입력"></p>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">11. 이메일 입력</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="email-wrap">
+          <p class="email-name"><input type="text" name="" id="" title="이메일 아이디 입력"></p>
+          <p class="email-address"><input type="text" name="" id="" title="이메일 주소 입력"></p>
+          <p class="email-select">
+            <select>
+              <option value="">선택하세요.</option>
+            </select>
+          </p>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">12. 입력컨텐츠 + 텍스트</h2>
+    <div class="guide__info">
+      <div class="guide__detail">
+        <!-- @ 실제 사용 영역 -->
+        <div class="row--input-wrap">
+          <div><input type="text" name="" id="" style="width:150px" class="al-r"><span class="char">원</span></div>
+          <div><input type="text" name="" id="" style="width:150px" class="al-r"><span class="char">원</span></div>
+        </div>
+        <!-- @ 실제 사용 영역 끝 -->
+      </div>
+    </div>
+
+    <h2 class="guide__title2">13. 라벨 입력 멀티</h2>
+    <div class="guide-detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="label--input-mulity">
+        <p class="label__input">
+          <label for="text0201">라벨1</label>
+          <input type="text" name="text0201" id="text0201" style="width:150px">
+        </p>
+        <p class="label__input">
+          <label for="text0202">라벨2</label>
+          <input type="text" name="text0202" id="text0202" style="width:150px">
+        </p>
+        <p class="label__input">
+          <label for="text0203">라벨3</label>
+          <input type="text" name="text0203" id="text0203" style="width:150px">
+        </p>
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">14. 라디오박스 + 입력컨텐츠</h2>
+    <div class="guide-detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="mulity__row--input-wrap">
+        <p class="radio__type01"><input type="radio" id="radio0301" name="radio03" checked=""><label
+            for="radio0301"><span></span>사이즈</label></p>
+        <p class="radio__type01"><input type="radio" id="radio0302" name="radio03"><label
+            for="radio0302"><span></span>공통</label></p>
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+
+    <h2 class="guide__title2">14. 라디오박스 여러개</h2>
+    <div class="guide-detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="mulity--check-radio">
+        <div>
+          <p class="radio__type01"><input type="radio" id="radio0101" name="radio01"><label
+              for="radio0101"><span></span>라디오박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="radio__type01"><input type="radio" id="radio0101" name="radio01"><label
+              for="radio0101"><span></span>라디오박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="radio__type01"><input type="radio" id="radio0101" name="radio01"><label
+              for="radio0101"><span></span>라디오박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="radio__type01"><input type="radio" id="radio0101" name="radio01"><label
+              for="radio0101"><span></span>라디오박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="radio__type01"><input type="radio" id="radio0101" name="radio01"><label
+              for="radio0101"><span></span>라디오박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="radio__type01"><input type="radio" id="radio0101" name="radio01"><label
+              for="radio0101"><span></span>라디오박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="radio__type01"><input type="radio" id="radio0101" name="radio01"><label
+              for="radio0101"><span></span>라디오박스 버튼 1</label></p>
+        </div>
+
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">15. 체크박스 + 텍스트</h2>
+    <div class="guide-detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="mulity--check-radio">
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0101" name="check01"><label
+              for="check0101"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0102" name="check01"><label
+              for="check0102"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0103" name="check01"><label
+              for="check0103"><span></span>체크박스 버튼 1</label></p>
+        </div>
+
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">16. 체크박스 여러개</h2>
+    <div class="guide-detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="mulity--check-radio">
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0101" name="check01"><label
+              for="check0101"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0102" name="check01"><label
+              for="check0102"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0103" name="check01"><label
+              for="check0103"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0101" name="check01"><label
+              for="check0101"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0101" name="check01"><label
+              for="check0101"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0101" name="check01"><label
+              for="check0101"><span></span>체크박스 버튼 1</label></p>
+        </div>
+        <div>
+          <p class="check__type01"><input type="checkbox" id="check0101" name="check01"><label
+              for="check0101"><span></span>체크박스 버튼 1</label></p>
+        </div>
+
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">17. 파일첨부</h2>
+    <div class="guide__detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="file__input">
+        <input type="file" name="file01" id="f01" class="input__file" onchange="front.form.inputFile(this)"
+          title="파일 업로드 찾기">
+        <input type="text" name="file-name01" id="fn01" readonly="" placeholder="" class="read__file"
+          title="업로드된 파일 경로">
+        <a href="javascript:;" class="btn__close">파일삭제</a>
+        <a href="javascript:;" class="btn01 btn01--type-03">찾아보기</a>
+        <!-- 이미지 썸네일 -->
+        <div class="thumb"></div>
+        <!-- //이미지 썸네일 -->
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">18. 파일첨부(Add & Del)</h2>
+    <div class="guide__detail">
+      <!-- @ 실제 사용 영역 -->
+      <ul class="file__parent">
+        <li class="add__input">
+          <div class="add__file">
+            <div class="file__input">
+              <input type="file" name="file01" id="f01" class="input__file" onchange="front.form.inputFile(this)"
+                title="파일 업로드 찾기">
+              <input type="text" name="file-name01" id="fn01" readonly="" placeholder="" class="read__file"
+                title="업로드된 파일 경로">
+              <a href="javascript:;" class="btn__close">파일삭제</a>
+              <a href="javascript:;" class="btn01 btn01--type-03">찾아보기</a>
+            </div>
+            <p class="btn__ui">
+              <a href="javascript:;" onclick="front.form.addInputFile(this);" class="btn__add"></a>
+              <a href="javascript:;" onclick="front.form.deleteInputFile(this);" class="btn__del"></a>
+            </p>
+          </div>
+        </li>
+      </ul>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">19. Textarea</h2>
+    <div class="guide__detail">
+      <!-- @ 실제 사용 영역 -->
+      <div>
+        <p class="mb10">- 기본</p>
+        <textarea name="" id=""></textarea>
+      </div>
+      <div class="mt30">
+        <p class="mb10">- custom(너비, 높이 조정 등)</p>
+        <textarea name="" id="" style="width:650px; height:300px;"></textarea>
+      </div>
+      <div class="mt30">
+        <p class="mb10">- pre view(너비, 높이 조정 등)</p>
+        <pre style="width:650px; height:300px;">내용입니다. 내용입니다.<br>내용입니다. 내용입니다.</pre>
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">@TABLES</h2>
+    <div class="guide__detail">
+      <!-- @ 실제 사용 영역 -->
+      <div class="table-list-data">
+        <div class="table-list-data">
+          <table class="list">
+            <caption>리스트 테이블 표</caption>
+            <colgroup>
+              <col style="width:80px">
+              <col style="width:auto">
+              <col style="width:auto">
+              <col style="width:auto">
+              <col style="width:110px">
+              <col style="width:100px">
+              <col style="width:100px">
+              <col style="width:auto">
+              <col style="width:auto">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">
+                  <p class="check-type01 single"><input type="checkbox" id="c0101" name="c0101"><label
+                      for="c0101"><span></span></label></p>
+                </th>
+                <th scope="col">작업구역ID</th>
+                <th scope="col">구역명</th>
+                <th scope="col">상위작업영역ID</th>
+                <th scope="col">서비스ID</th>
+                <th scope="col">등록자</th>
+                <th scope="col">최근수정자</th>
+                <th scope="col">등록일시</th>
+                <th scope="col">최근수정일시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0102" name="c0102"><label
+                      for="c0102"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0103" name="c0103"><label
+                      for="c0103"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0104" name="c0104"><label
+                      for="c0104"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0105" name="c0105"><label
+                      for="c0105"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0106" name="c0106"><label
+                      for="c0106"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0107" name="c0107"><label
+                      for="c0107"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0108" name="c0108"><label
+                      for="c0108"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0109" name="c0109"><label
+                      for="c0109"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0110" name="c0110"><label
+                      for="c0110"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="check-type01 single"><input type="checkbox" id="c0111" name="c0111"><label
+                      for="c0111"><span></span></label></p>
+                </td>
+                <td>zn123451234</td>
+                <td><a href="#">제3 메인구역</a></td>
+                <td>zn123451234</td>
+                <td>BIZCD1</td>
+                <td>김길동</td>
+                <td>김길동</td>
+                <td>2016-10-04 16:38:22</td>
+                <td>2016-10-04 16:38:22</td>
+              </tr>
+              <tr>
+                <td colspan="9">
+                  <p class="none-data">등록된 게시물이 없습니다</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+    <h2 class="guide__title2">세로 및 입력 테이블 리스트</h2>
+    <div class="guide-detail">
+      <!-- @ 실제 사용 영역 -->
+      <table class="view">
+        <caption>입력 테이블</caption>
+        <colgroup>
+          <col style="width:160px">
+          <col style="width:auto">
+          <col style="width:160px">
+          <col style="width:auto">
+
+        </colgroup>
+        <tbody>
+          <tr>
+            <th scope="row">테이블 타이틀<em class="fc01">*</em></th>
+            <td>테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타</td>
+            <th scope="row">테이블 타이틀<em class="fc01">*</em></th>
+            <td>테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타</td>
+          </tr>
+          <tr>
+            <th scope="row">테이블 타이틀</th>
+            <td>테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타</td>
+            <th scope="row">테이블 타이틀<em class="fc01">*</em></th>
+            <td>테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타</td>
+          </tr>
+          <tr>
+            <th scope="row">테이블 타이틀</th>
+            <td>테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타</td>
+            <th scope="row">테이블 타이틀<em class="fc01">*</em></th>
+            <td>테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타 테이블 데이타</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-bottom-info">* 테이블 하단 정보입니다.</div>
+      <!-- @ 실제 사용 영역 끝 -->
+    </div>
+
+
+  </div>
+  <script>
+    $(function () {
+      $(".datepicker").datepicker({
+        showOn: "both",
+        buttonImage: "images/btn_datepicker.png",
+        buttonImageOnly: true,
+        dateFormat: 'yy-mm-dd',
+        prevText: '이전 달',
+        nextText: '다음 달',
+        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthAfterYear: true,
+        yearSuffix: '년'
+      });
+    });
+  </script>
+</body>
+
+</html>

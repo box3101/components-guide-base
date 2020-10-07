@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+  <link rel="stylesheet" type="text/css" href="css/guide.css">
+
+  <title>GUIDE</title>
+</head>
+
+<body>
+
+  <div class="guide__nav">
+    <h1><a href="index.html">guide</a></h1>
+    <ul class="nav">
+      <li><a href="color.html">color</a></li>
+      <li><a href="text.html">text</a></li>
+      <li class="on"><a href="button.html">button</a></li>
+      <li><a href="form.html">form</a></li>
+      <!--<li><a href="table.html">table</a></li>-->
+    </ul>
+  </div>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var url = window.location.pathname;
+      url = url.split("/");
+      url = url[url.length - 1];
+      url = url.split("-");
+      if (url.length === 0) {
+        $(".nav li a").each(function () {
+          if (url == $(this).attr("href")) {
+            $(this).parent("li").siblings().removeClass("on");
+            $(this).parent("li").addClass("on");
+          }
+        });
+      } else {
+        url = url[0];
+        $(".nav li a").each(function () {
+          if (url == $(this).attr("href")) {
+            $(this).parent("li").siblings().removeClass("on");
+            $(this).parent("li").addClass("on");
+          }
+        });
+      }
+    });
+  </script>
+
+  <div class="guide__content">
+    <h2 class="guide__title">BUTTON</h2>
+
+    <h3 class="guide__title2">BtnTypeBig</h3>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-big btn--color-blue btn--radius-8">BigType01</a>
+    </div>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-big btn--color-block btn--radius-20">BigType02</a>
+    </div>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-big btn--color-gray btn--radius-50">BigType03</a>
+    </div>
+
+    <h3 class="guide__title2">BtnTypeMid</h3>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-mid btn--color-blue">BigType01</a>
+    </div>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-mid btn--color-block">BigType02</a>
+    </div>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-mid btn--color-gray">BigType03</a>
+    </div>
+
+    <h3 class="guide__title2">BtnTypeSm</h3>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-sm btn--color-blue">BigType01</a>
+    </div>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-sm btn--color-block">BigType02</a>
+    </div>
+    <div class="btn__wrap">
+      <a href="#" class="btn--type-sm btn--color-gray">BigType03</a>
+    </div>
+	
+  </div>
+  <script>
+    $(document).ready(function () {
+    });
+  </script>
+</body>
+
+</html>
