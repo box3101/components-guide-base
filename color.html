@@ -1,72 +1,129 @@
-
 <!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport"
-			content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
-		<meta name="format-detection" content="telephone=no, address=no, email=no">
-	
-		<link rel="stylesheet" type="text/css" href="css/guide.css">
-	
-		<title>GUIDE</title>
-	</head>
-  
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/ui.css">
+
+	<title>GUIDE</title>
+</head>
+
 <body>
 
-<div class="guide__nav">
-	<h1><a href="index.html">guide</a></h1>
-	<ul class="nav">
-		<li class="on"><a href="color.html">color</a></li>
-		<li><a href="text.html">text</a></li>
-		<li><a href="button.html">button</a></li>
-		<li><a href="form.html">form</a></li>
-		<!--<li><a href="table.html">table</a></li>-->
-	</ul>
-</div>
+	<div class="guide__nav">
+		<h1><a href="index.html">guide</a></h1>
+		<ul class="nav">
+			<li class="on"><a href="color.html">color</a></li>
+			<li><a href="text.html">text</a></li>
+			<li><a href="button.html">button</a></li>
+			<li><a href="form.html">form</a></li>
+			<!--<li><a href="table.html">table</a></li>-->
+		</ul>
+	</div>
 
-<script type="text/javascript">
-	$(document).ready(function () {
-		var url = window.location.pathname;
-		url = url.split("/");
-		url = url[url.length - 1];
-		url = url.split("-");
-		if (url.length === 0) {
-			$(".nav li a").each(function () {
-				if (url == $(this).attr("href")) {
-					$(this).parent("li").siblings().removeClass("on");
-					$(this).parent("li").addClass("on");
-				}
-			});
-		} else {
-			url = url[0];
-			$(".nav li a").each(function () {
-				if (url == $(this).attr("href")) {
-					$(this).parent("li").siblings().removeClass("on");
-					$(this).parent("li").addClass("on");
-				}
-			});
-		}
-	});
-</script>	
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var url = window.location.pathname;
+			url = url.split("/");
+			url = url[url.length - 1];
+			url = url.split("-");
+			if (url.length === 0) {
+				$(".nav li a").each(function () {
+					if (url == $(this).attr("href")) {
+						$(this).parent("li").siblings().removeClass("on");
+						$(this).parent("li").addClass("on");
+					}
+				});
+			} else {
+				url = url[0];
+				$(".nav li a").each(function () {
+					if (url == $(this).attr("href")) {
+						$(this).parent("li").siblings().removeClass("on");
+						$(this).parent("li").addClass("on");
+					}
+				});
+			}
+		});
+	</script>
 	<div class="guide__content">
 		<h2 class="guide__title">COLOR</h2>
-		<div class="guide__box color">
-			<span class="CBrand">#fe7600<br>255,75,0 <br> $CBrand</span>
-			<span class="CBrand2">#458e15<br>69,142,21 <br> $CBrand2</span>
-			<br/>
 
-			<span class="CBlack">#000000<br>0,0,0<br> $CBlack</span>
-			<span class="CBlack">#333333<br>51,51,51<br>$CBlack2</span>
-			<br/>
+		<h2 class="guide__title2">TYPE</h2>
+		<div class="row">
+			<div class="col-xs-6 col-md-3 color color-primary">
+				<div class="swatch"></div>
 
-			<span class="CGray">#555555<br>85,85,85<br>$CGray</span>
-			<!-- <span class="CGray2">#888888<br>$CGray2</span>
-			<span class="CGray3">#b2b2b2<br>$CGray3</span>
-			<span class="CGray4">#f7f7f7<br>$CGray4</span> -->
+				<div class="row">
+					<div class="col-xs-2 col-sm-3">
+						<p class="label">Name:</p>
+						<p class="label">RGB:</p>
+						<p class="label">HSL:</p>
+					</div>
+					<div class="col-xs-10 col-sm-9">
+						<p class="label label-color label-name"></p>
+						<p class="label label-color label-rgb"></p>
+						<p class="label label-color label-hsl"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3 color color-secondary">
+				<div class="swatch"></div>
+
+				<div class="row">
+					<div class="col-xs-2 col-sm-3">
+						<p class="label">Name:</p>
+						<p class="label">RGB:</p>
+						<p class="label">HSL:</p>
+					</div>
+					<div class="col-xs-10 col-sm-9">
+						<p class="label label-color label-name"></p>
+						<p class="label label-color label-rgb"></p>
+						<p class="label label-color label-hsl"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3 color color-tertiary">
+				<div class="swatch"></div>
+
+				<div class="row">
+					<div class="col-xs-2 col-sm-3">
+						<p class="label">Name:</p>
+						<p class="label">RGB:</p>
+						<p class="label">HSL:</p>
+					</div>
+					<div class="col-xs-10 col-sm-9">
+						<p class="label label-color label-name"></p>
+						<p class="label label-color label-rgb"></p>
+						<p class="label label-color label-hsl"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3 color color-accent">
+				<div class="swatch"></div>
+
+				<div class="row">
+					<div class="col-xs-2 col-sm-3">
+						<p class="label">Name:</p>
+						<p class="label">RGB:</p>
+						<p class="label">HSL:</p>
+					</div>
+					<div class="col-xs-10 col-sm-9">
+						<p class="label label-color label-name"></p>
+						<p class="label label-color label-rgb"></p>
+						<p class="label label-color label-hsl"></p>
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</div>
 </body>
+
 </html>

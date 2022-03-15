@@ -1,0 +1,153 @@
+$neutral-color: #ddd;
+
+$primary-color: #D9F5E8;
+$primary-color-name: 'Mint';
+
+$secondary-color: #37cbc2;
+$secondary-color-name: 'Teal';
+
+$tertiary-color: #fb3;
+$tertiary-color-name: 'Gold';
+
+$accent-color: #FF6347;
+$accent-color-name: 'Tomato';
+
+
+$lighten-amount: 8;
+$light-saturate-amount: 10;
+
+$darken-amount: 10;
+$dark-saturate-amount: 20;
+
+$mix-weight: 65%;
+
+$colors: (
+    primary: $primary-color,
+    secondary: $secondary-color,
+    tertiary: $tertiary-color,
+    accent: $accent-color
+);
+
+$color-names: (
+    primary: $primary-color-name,
+    secondary: $secondary-color-name,
+    tertiary: $tertiary-color-name,
+    accent: $accent-color-name
+);
+
+@each $color-type, $color-value in $colors {
+  // Get the RGB values
+  .color-#{$color-type} .label-rgb:before {
+      content: '#{red($color-value)} / #{green($color-value)} / #{blue($color-value)}';
+  }
+  
+  // Get the HSL values and round them
+  .color-#{$color-type} .label-hsl:before {
+      content: '#{round(hue($color-value))} / #{round(saturation($color-value))} / #{round(lightness($color-value))}';
+  }
+  
+  // Set the swatch color
+  .color-#{$color-type} .swatch {
+      background: $color-value;
+  }
+  
+  // Set the swatch color for the Light palette
+  .color-#{$color-type} .swatch-light {
+      background: lighten(saturate($color-value, $light-saturate-amount), $lighten-amount);
+  }
+
+  // Set the swatch color for the Dark palette
+  .color-#{$color-type} .swatch-dark {
+      background: darken(saturate($color-value, $dark-saturate-amount), $darken-amount);
+  }
+  
+  .color-primary .mixed-with-#{$color-type} .swatch {
+      background: mix($color-value, $primary-color, $mix-weight);
+  }
+  
+  .color-secondary .mixed-with-#{$color-type} .swatch {
+      background: mix($color-value, $secondary-color, $mix-weight);
+  }
+  
+  .color-tertiary .mixed-with-#{$color-type} .swatch {
+      background: mix($color-value, $tertiary-color, $mix-weight);
+  }
+  
+  .color-accent .mixed-with-#{$color-type} .swatch {
+      background: mix($color-value, $accent-color, $mix-weight);
+  }
+}
+
+@each $color-type, $color-name-value in $color-names {
+  // Get the color's name
+  .color-#{$color-type} .label-name:before,
+  .color-#{$color-type} h3.subheader:before {
+      content: '#{$color-name-value}';
+  }
+}
+
+
+
+// Side labels; a lot of Bootstrap overrides
+
+.label {
+  color: #ddd;
+  white-space: normal;
+  text-align: left;
+  font-size: 1.5rem;
+  border-radius: 0;
+  display: block;
+  padding: 0;
+  margin-bottom: 1rem;
+  
+  &:empty {
+      display: block;
+  }
+  
+  .row-eq-height & {        
+      vertical-align: middle;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  
+  .color & {
+      color: #000;
+      
+      &.label-color {
+          text-align: right;
+          font-weight: normal;
+      }
+  }
+}
+
+// ===============================
+//   Color Section
+// ===============================
+
+.swatch {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 2rem;
+  
+  &.swatch-small {
+      height: 50px;
+  }
+}
+
+.mixed-with-primary h4:before {
+  content: 'Mixed with #{$mix-weight} #{$primary-color-name}';
+}
+
+.mixed-with-secondary h4:before {
+  content: 'Mixed with #{$mix-weight} #{$secondary-color-name}';
+}
+
+.mixed-with-tertiary h4:before {
+  content: 'Mixed with #{$mix-weight} #{$tertiary-color-name}';
+}
+
+.mixed-with-accent h4:before {
+  content: 'Mixed with #{$mix-weight} #{$accent-color-name}';
+}
+
